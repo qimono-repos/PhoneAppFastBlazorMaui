@@ -12,8 +12,7 @@ namespace ComponentAppFastRazorClassLibrary
         string htmlDynamicListSnippet = string.Empty;
 
         string[]? words;
-        SnippetHtmlBuilder snippetHtmlBuilder = new SnippetHtmlBuilder("ul");
-
+        SnippetHtmlBuilder? snippetHtmlBuilder;
         protected override void OnInitialized()
         {
             words = new[] { "Static snippet", "solved at implementation" };
@@ -27,7 +26,7 @@ namespace ComponentAppFastRazorClassLibrary
             sb.Append("</ul>");
             htmlListSnippet = sb.ToString();
 
-            //snippetHtmlBuilder = new SnippetHtmlBuilder("ul");
+            snippetHtmlBuilder = new SnippetHtmlBuilder("ul");
             snippetHtmlBuilder.AddChild("li","Forget");
             snippetHtmlBuilder.AddChild("li","Active");
             snippetHtmlBuilder.AddChild("li","State");
@@ -55,7 +54,7 @@ namespace ComponentAppFastRazorClassLibrary
             int indentationFormula = _indentSize * indentation;
             int indentationTextFormula = _indentSize * (indentationFormula + 1);
             string indentSpaces = new string(' ', indentationFormula);
-            sb.Append($"{indentSpaces}<{Name}>");
+            sb.AppendLine($"{indentSpaces}<{Name}>");
             //if (string.IsNullOrWhiteSpace(Text)) return sb.ToString();
             if (!string.IsNullOrEmpty(Text))
             {
