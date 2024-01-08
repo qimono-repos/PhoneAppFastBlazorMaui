@@ -16,7 +16,7 @@ namespace ComponentAppFastRazorClassLibrary
 
         protected override void OnInitialized()
         {
-            words = new[] { "AAAAAA", "BBBBBB" };
+            words = new[] { "Static snippet", "solved at implementation" };
             sb.Clear();
             sb.Append("<ul>");
 
