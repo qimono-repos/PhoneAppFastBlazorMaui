@@ -15,16 +15,16 @@ namespace ComponentAppFastRazorClassLibrary
         SnippetHtmlBuilder? snippetHtmlBuilder;
         protected override void OnInitialized()
         {
-            words = new[] { "Static snippet", "solved at implementation" };
-            sb.Clear();
-            sb.Append("<ul>");
+            //words = new[] { "Static snippet", "solved at implementation" };
+            //sb.Clear();
+            //sb.Append("<ul>");
 
-            foreach (var word in words)
-            {
-                sb.AppendFormat("<li>{0}<li>", word);
-            }
-            sb.Append("</ul>");
-            htmlListSnippet = sb.ToString();
+            //foreach (var word in words)
+            //{
+            //    sb.AppendFormat("<li>{0}<li>", word);
+            //}
+            //sb.Append("</ul>");
+            //htmlListSnippet = sb.ToString();
 
             snippetHtmlBuilder = new SnippetHtmlBuilder("ul");
             snippetHtmlBuilder.AddChild("li","Forget");
@@ -32,8 +32,10 @@ namespace ComponentAppFastRazorClassLibrary
             snippetHtmlBuilder.AddChild("li","State");
             snippetHtmlBuilder.AddChild("li","Teach");
 
-            string snippet = snippetHtmlBuilder.ToString()?? "No text to show";
-            htmlDynamicListSnippet = snippet;
+            //string snippet = snippetHtmlBuilder.ToString()?? "No text to show";
+            //htmlDynamicListSnippet = snippet;
+            htmlDynamicListSnippet = "this comes from FastDeffinitionComponent.razor.cs";
+
         }
     }
     public class SnippetHtmlElement
