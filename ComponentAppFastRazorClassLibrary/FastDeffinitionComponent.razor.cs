@@ -64,6 +64,7 @@ namespace ComponentAppFastRazorClassLibrary
             foreach (var element in HtmlElements)
                 sb.Append(element.ToStringImplementation(indentation + 1));
             sb.AppendLine($"{indentSpaces}<{Name}/>");
+            //sb.AppendLine("<img src=\"DrawComponent.svg\" alt=\"The SVG Image\" />\r\n");
 
             return sb.ToString();
         }
