@@ -2,25 +2,39 @@
 
 <h1>Counter</h1>
 
-<p role="status">Current count: @currentCount</p>
+<p role="status">Current HEIGHT: @currentCount</p>
+<p role="status">Current WIDTHGHT: @currentWidth</p>
+
 
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
-    <circle cx="50" cy="50" r=@currentCount fill="blue" />
+    <rect 
+        x="25" y="15" 
+        width=@currentWidth 
+        height=@currentCount 
+        fill="yellow" 
+        stroke="blue" 
+        stroke-width="2" 
+        />
 </svg>
 
-<img src="~/DrawImage.svg" alt="the draw img"/>
+@* <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <circle cx="50" cy="50" r=@currentCount fill="blue" />
+</svg> *@
+
+@* <img src="~/DrawImage.svg" alt="the draw img"/> *@
 
 <br/>
 
 @* <object data="~/favicon.png" type="image/svg+xml"></object> *@
 <br />
 
-<iframe src="~/favicon.png"></iframe>
+@* <iframe src="~/favicon.png"></iframe> *@
 <br />
 
-<button class="btn btn-primary" @onclick="IncrementCount">Counter</button>
+<button class="btn btn-primary" @onclick="IncrementCount">Height</button>
+<button class="btn btn-primary" @onclick="IncrementWidth">Width</button>
 
-<button class="btn btn-primary" @onclick="CheckIntenet">Check Internet</button>
+@* <button class="btn btn-primary" @onclick="CheckIntenet">Check Internet</button> *@
 
 
 @code {
@@ -30,7 +44,12 @@
     {
         currentCount++;
     }
+    private int currentWidth= 0;
 
+    private void IncrementWidth()
+    {
+        currentWidth++;
+    }
     private async void CheckIntenet()
     {
         var hasInternet = Connectivity.Current.NetworkAccess == NetworkAccess.Internet;
