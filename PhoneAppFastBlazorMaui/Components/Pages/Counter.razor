@@ -4,9 +4,20 @@
 
 <p role="status">Current count: @currentCount</p>
 
+<img src="~/DrawImage.svg" alt="the draw img"/>
+
+<br/>
+
+@* <object data="~/favicon.png" type="image/svg+xml"></object> *@
+<br />
+
+<iframe src="~/favicon.png"></iframe>
+<br />
+
 <button class="btn btn-primary" @onclick="IncrementCount">Counter</button>
 
 <button class="btn btn-primary" @onclick="CheckIntenet">Check Internet</button>
+
 
 @code {
     private int currentCount = 0;
